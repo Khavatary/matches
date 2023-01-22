@@ -1,28 +1,17 @@
-import status from '../app';
+import sortHealth from '../app';
 
-test('healthy', () => {
-  const char = {
-    name: 'Маг',
-    health: 85,
-  };
+test('order', () => {
+  const arr = [
+    { name: 'мечник', health: 10 },
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+  ];
 
-  expect(status(char)).toBe('healthy');
-});
+  const result = [
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+    { name: 'мечник', health: 10 },
+  ];
 
-test('wounded', () => {
-  const char = {
-    name: 'Маг',
-    health: 45,
-  };
-
-  expect(status(char)).toBe('wounded');
-});
-
-test('critical', () => {
-  const char = {
-    name: 'Маг',
-    health: 10,
-  };
-
-  expect(status(char)).toBe('critical');
+  expect(sortHealth(arr)).toEqual(result);
 });
