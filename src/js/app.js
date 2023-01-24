@@ -1,3 +1,5 @@
 export default function sortHealth(players) {
-  return players.sort((first, second) => second.health - first.health);
+  const arrPlayers = players;
+  const resultSort = arrPlayers.sort((first, second) => second.health - first.health);
+  return resultSort;
 }
